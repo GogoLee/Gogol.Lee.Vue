@@ -7,7 +7,13 @@
       <el-menu-item index="2-2">选项2</el-menu-item> 
       <el-menu-item index="2-3">选项3</el-menu-item>
     </el-submenu>
-    <el-menu-item index="3"><a href="#" target="_blank">订单管理</a></el-menu-item>
+    <el-menu-item>
+      <el-submenu index="3" class="header-operations">
+      <el-menu-item index="3-1">切换主题</el-menu-item>
+      <el-menu-item index="3-2">下载主题</el-menu-item>
+      <el-menu-item index="3-3">帮助</el-menu-item>
+    </el-submenu>
+    </el-menu-item>
   </el-menu>
 </template>
 <script>

@@ -1,6 +1,6 @@
 # leseco
 
-> node.js+vue+webpack后台管理系统
+> 基于node.js+vue+webpack后台管理系统
 
 ## Build Setup
 

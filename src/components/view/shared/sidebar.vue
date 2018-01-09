@@ -1,7 +1,7 @@
 <<template>
   <el-menu
       default-active="2"
-      class="el-menu-vertical-demo"
+      
       @open="handleOpen"
       @close="handleClose">
       <el-submenu index="1">
@@ -32,13 +32,6 @@
       </el-menu-item>
     </el-menu>
 </template>
-
-<style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
-</style>
 
 <script>
 export default {

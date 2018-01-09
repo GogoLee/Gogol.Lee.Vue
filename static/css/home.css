@@ -32,9 +32,12 @@ header {
 .el-header {
     padding: 0 20px;
     box-sizing: border-box;
-    background-color: rgb(64, 158, 255);
+    background-color: rgb(255, 255, 255);
 }
 .el-menu, body, html {
+    height: 100%;
+}
+.wrapper{
     height: 100%;
 }
 body{
@@ -42,10 +45,19 @@ body{
 }
 
 .el-menu {
-    border-right: 1px solid #e6e6e6;
-    list-style: none;
-    position: relative;
-    margin: 0;
-    padding-left: 0;
-    background-color: #fff;
+    border-right: none;
+}
+.header-operations {
+    display: inline-block;
+    float: right;
+    height: 100%;
+}
+.header-operations li {
+    /* color: #fff; */
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+    margin: 0 10px;
+    line-height: 60px;
+    cursor: pointer;
 }
