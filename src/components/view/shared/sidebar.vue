@@ -1,23 +1,13 @@
 <<template>
-  <el-menu :default-active="onRoutes" class="el-menu--dark" background-color="#545c64"
+  <el-menu :default-active="onRoutes" class="el-menu--dark" 
       text-color="#fff"
       active-text-color="#ffd04b" router>
       <template v-for="item in items">
         <template v-if="item.subs">
           <el-submenu :index="item.index">
-            <template slot="title"><i :class="item.icon"></i>{{ item.title }}</template>
-            
-            <el-menu-item-group v-for="(sub,i) in item.subs" :key="i" :index="sub.index">
-              <template v-if="sub.subs">
-                <el-submenu :index="sub.index">
-                  <template slot="title">{{ sub.title }}</template>
-                  <el-menu-item v-for="(subItem,i) in sub.subs" :key="i" :index="subItem.index">{{ subItem.title }}</el-menu-item>
-                </el-submenu>
-              </template>
-              <template v-else>
-                <el-menu-item :index="sub.index">{{ sub.title }}</el-menu-item>
-              </template>
-            </el-menu-item-group>
+              <template slot="title"><i :class="item.icon"></i>{{ item.title }}</template>
+              <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">{{ subItem.title }}
+              </el-menu-item>
           </el-submenu>
         </template>
         <template v-else>
@@ -40,19 +30,17 @@ export default {
           title: "主页"
         },
         {
-          icon: "el-icon-menu",
+          icon: "el-icon-tickets",
           index: "2",
-          title: "人事管理",
+          title: "表格",
           subs: [
             {
-              index: "2-1",
-              title: "用户管理",
-              subs: [
-                {
-                  index: "perssion",
-                  title: "权限管理"
-                }
-              ]
+              index: "datatable",
+              title: "常规表格"
+            },
+            {
+              index: "datasource",
+              title: "组件表格"
             }
           ]
         },
