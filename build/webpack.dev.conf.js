@@ -10,6 +10,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+// const express = require('express')
+// const app = express()
+// var appData = require('../static/data.json')
+// var list = appData.list
+// var apiRoutes = express.Router()
+// //为了统一管理api接口，我们在要请求的路由前边都加上‘/api’来表明这个路径是专门用来提供api数据的
+// app.use('/api', apiRoutes)
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -42,7 +50,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+    // before(app) {
+    //   app.get('api/list', (req, res) => {
+    //     res.json({
+    //       errno: 0,
+    //       data: list
+    //     })
+    //   })
+    // }
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -85,8 +101,8 @@ module.exports = new Promise((resolve, reject) => {
           messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
         },
         onErrors: config.dev.notifyOnErrors
-        ? utils.createNotifierCallback()
-        : undefined
+          ? utils.createNotifierCallback()
+          : undefined
       }))
 
       resolve(devWebpackConfig)

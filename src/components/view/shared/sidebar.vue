@@ -1,17 +1,16 @@
 <<template>
-  <el-menu :default-active="onRoutes" class="el-menu--dark" 
-      text-color="#fff"
-      active-text-color="#ffd04b" router>
+  <el-menu :default-active="onRoutes" class="el-menu--dark" text-color="#fff"
+      active-text-color="#ffd04b" :collapse="toggle" router>
       <template v-for="item in items">
         <template v-if="item.subs">
           <el-submenu :index="item.index">
-              <template slot="title"><i :class="item.icon"></i>{{ item.title }}</template>
+              <template slot="title"><i :class="item.icon"></i><span slot="title">{{ item.title }}</span></template>
               <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">{{ subItem.title }}
               </el-menu-item>
           </el-submenu>
         </template>
-        <template v-else>
-          <el-menu-item :index="item.index"><i :class="item.icon"></i>{{ item.title }}</el-menu-item>
+        <template  v-else>
+          <el-menu-item :index="item.index"><i :class="item.icon"></i><span slot="title">{{ item.title }}</span></el-menu-item>
         </template>
       </template>
       
@@ -22,7 +21,7 @@
 export default {
   data() {
     return {
-      isCollapse: true,
+      isCollapse: false,
       items: [
         {
           icon: "el-icon-menu",
@@ -57,15 +56,13 @@ export default {
               index: "form_validate",
               title: "表单验证"
             },
-            {
-              index: "table",
-              title: "表格"
-            }
+            
           ]
         }
       ]
     };
   },
+  props: ['toggle'],
   computed: {
     onRoutes() {
       return this.$route.path.replace("/", "");

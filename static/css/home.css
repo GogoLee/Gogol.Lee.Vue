@@ -33,6 +33,37 @@ header {
     padding: 0 20px;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+.collpad{
+    float: left;
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #FFF;
+    border-radius: 3px;
+    padding: 6px 12px;
+    font-size: 14px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin: 14px 5px 5px 0px;
+    cursor: pointer;
+}
+.collpad:active:hover{
+    color: #fff;
+    background-color: #204d74;
+    border-color: #122b40;
+}
+.collpad:focus{
+    color: #fff;
+    background-color: #286090;
+    border-color: #122b40;
+}
+.el-aside{
+    overflow: hidden;
 }
 .el-menu, body, html {
     height: 100%;
@@ -50,6 +81,10 @@ body{
 .el-menu li {
     text-align: left;
 }
+.el-menu--dark:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 200px;
+  }
 .header-operations {
     display: inline-block;
     float: right;
@@ -84,4 +119,17 @@ body{
     overflow: hidden;
     /* box-shadow: 0 2px 12px 0 rgba(0,0,0,.1); */
     color: #303133;
+}
+/* table */
+.table-filter{
+    margin-bottom: 20px;
+    text-align: left;
+}
+.table-input{
+    width: 300px;
+}
+/* 分页*/
+.pagination {
+    margin: 20px 0;
+    text-align: center;
 }
